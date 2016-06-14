@@ -1,0 +1,123 @@
+/* $MENU */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    opacity: 1;
+    background-color: rgba(0,0,0,0.9);
+    visibility: hidden;
+    -webkit-transition: opacity .35s, visibility .35s, height .35s;
+                   transition: opacity .35s, visibility .35s, height .35s;
+}
+    .menu.open { visibility: visible; height: 100%; }
+        .menu.open .social { animation: fadeInSocial .5s ease forwards; animation-delay: .95s; }
+        .menu.open .tos { animation: fadeInTOS .5s ease forwards; animation-delay: 1.25s; }
+        .menu.open .links li { animation: fadeIn .5s ease forwards; animation-delay: .35s; }
+            .menu.open .links li:nth-of-type(2) { animation-delay: .45s; }
+            .menu.open .links li:nth-of-type(3) { animation-delay: .55s; }
+            .menu.open .links li:nth-of-type(4) { animation-delay: .65s; }
+            .menu.open .links li:nth-of-type(5) { animation-delay: .75s; }
+            .menu.open .links li:nth-of-type(6) { animation-delay: .85s; }
+
+    .menu nav {
+        text-align: center;
+        z-index: 100;
+    }
+    .menu .links li a {
+      display: block;
+      position: relative;
+      color: #7D8F94;
+      text-decoration: none;
+      overflow: hidden;
+    }
+    .overlay-menu .links, .overlay-menu .social, .overlay-menu .tos {
+        position: absolute;
+        margin: auto;
+        list-style: none;
+        padding: 0;
+        display: inline-block;
+    }
+    .overlay-menu .links {
+        top: 0; left: 0; right: 0; bottom: 0;
+        height: 45%;
+    }
+    .overlay-menu .links li {
+        display: block;
+        height: 16.667%;
+        font: 700 2.875em / 1.25em Roboto;
+        position: relative;
+        opacity: 0;
+        text-transform: uppercase;
+    }
+
+    .overlay-menu .social {
+        bottom: 20%; left: 0; right: 0;
+        max-width: 98%; height: 2em;
+        opacity: 0;
+        margin: 0 auto;
+    }
+        .overlay-menu .social li, #social span {
+            display: inline-block;
+            padding: 0 0.500em;
+        }
+
+    .titles {
+        font-size: 1.3em;
+        float: right;
+        padding: 0;
+        font-weight: 700;
+    }
+        .social a, .tos a { color: #7D8F94; text-decoration: none; }
+        .menu .links li a:hover, .social a:hover, .tos a:hover { color: #FFF; }
+        .social a:hover path { fill: #FFF; }
+        .social a:hover rect { fill: #FFF; }
+
+    .overlay-menu .tos {
+        bottom: 6%; left: 0; right: 0;
+        max-width: 32.5em;
+        margin: 0 auto;
+        opacity: 0;
+    }
+        .overlay-menu .tos li { float: left; padding: 0 0.750em; font-weight: 700; }
+
+
+
+
+
+/* $ANIMATION */
+@keyframes fadeIn {
+  0% { opacity: 0; top: 20%; }
+  100% { opacity: 1; top: 0; }
+}
+
+@keyframes fadeInSocial {
+  0% { opacity: 0; bottom: 0; }
+  100% { opacity: 1; bottom: 10%; }
+}
+
+@keyframes fadeInTOS {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes popup {
+  0% { opacity: 0; bottom: -20%; }
+  100% { opacity: 0.8; bottom: -2%; }
+}
+
+
+
+
+/* Desktop */
+@media screen and (min-width: 59em){
+    .dest-ce-que { display: inline-block !imporant; }
+}
+
+/* Mobile */
+@media screen and (max-width: 59em) {    
+    .dest-ce-que { display: none !important; }
+    
+    .overlay-menu .links li { font: 700 2em / 1.25em Roboto; }
+}

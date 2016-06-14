@@ -1,0 +1,281 @@
+/*TABLE OF CONTENTS
+
+$GENERAL - Master code stuff. General styles and setup for main page + PAGE MENU SWITCH
+$VP - Viewport layout setup
+$HEADER - Logo and hamburger button stuff
+$TABS - OS Downloads + buttons
+$ANIMATIONS - All the keyframes for site animations
+$TYPOGRAPHY - General page typography (does NOT include menu typography)
+$TEAM - Styles for the Team page bios/profile images
+$MEDIA - Mediq Queries
+
+END OF TOC */
+
+
+
+
+/* $GENERAL */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body { overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    font-size: 100%;
+    color: #252525;
+}
+
+.menu {
+    width: 50vw;
+}
+
+img { max-width: 100%; }
+
+
+
+
+/* VP */
+.content, .stock { float: left; position: relative;}
+
+.content {
+    width: 50vw; height: 100vh;
+    overflow-y: auto;
+    padding: 4vh 4vw;
+}
+
+.stock {
+    width: 50vw; height: 100vh;
+    background-position: center;
+    background-size: cover;    
+}
+
+.downloads { background-image: url(images/downloads-background.jpg); }
+.about { background-image: url(images/about-background.jpg); }
+.team { background-image: url(images/team-background.jpg); }
+.board { background-image: url(images/board-background.jpg); }
+.doc { background-image: url(images/doc-background.jpg); }
+.support { background-image: url(images/support-background.jpg); }
+
+
+
+/* $HEADER */
+.logo {
+    position: absolute;
+    margin: auto;
+    top: 50px; left: 50px;
+    display: table;
+}
+
+#logo {
+    width: 150px; height: 74px;
+    background: url(images/weblogov1-white.svg);
+    background-size: 150px 74px;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.hamburger {
+    position: absolute;
+    margin: auto;
+    top: 50px; right: 50px; bottom: auto;
+    width: 40px; height: 40px;
+    border-radius: 4px;
+    background-color: #FFF;
+    cursor: pointer;
+    z-index: 100;
+    transition: opacity .25s ease;
+}
+    .hamburger:hover { opacity: 0.7; }
+    .hamburger.active { background-color: transparent; }
+    .hamburger.active .top { transform: translateY(4px) translateX(0) rotate(45deg); background: #FFF; }
+    .hamburger.active .middle { opacity: 0; background: #FFF; }
+    .hamburger.active .bottom { transform: translateY(-4px) translateX(0) rotate(-45deg); background: #FFF; }
+
+    .hamburger span {
+        background-color: #252525;
+        border: none;
+        height: 2px;
+        width: 16px;
+        position: absolute;
+        top: 15px; left: 12px;
+        transition: all .35s ease;
+        cursor: pointer;
+    }
+        .hamburger span:nth-of-type(2){ top: 19px; }
+        .hamburger span:nth-of-type(3){ top: 23px; }
+
+
+
+
+/* TABS */
+.tabs-navi{
+    box-shadow: inset 0 -1px 0 #ccc;
+    padding: 0 !important; /* Shame Code */
+}
+.tabs-navi:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.tabs-navi li {
+    float: left;
+    list-style: none;
+}
+.tabs-navi a {
+  display: block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  color: #c3c2b9;
+    padding-left: 1em; padding-right: 1em;
+  padding-bottom: 20px;
+    text-decoration: none;
+}
+.no-touch .tabs-navi a:hover {
+  color: #29324e;
+  background-color: rgba(233, 230, 202, 0.3);
+}
+.tabs-navi a.selected {
+  box-shadow: inset 0 -4px 0  #4384FD;
+  color: #29324e;
+}
+.tabs-content {
+    background: #ffffff;
+    padding: 0 !important; /* Shame Code */
+}
+.tabs-content li {
+  display: none;
+  padding: 1.4em 0;
+}
+.tabs-content li.selected {
+  display: block;
+  -webkit-animation: fade-in 0.5s;
+  -moz-animation: fade-in 0.5s;
+  animation: fade-in 0.5s;
+}
+.tabs-content li p {
+  line-height: 1.6;
+}
+.download, .alt-download {
+    display: inline-block;
+    padding: 0 0.75em;
+    height: 2.25em;
+    border-radius: 0.25em;
+    border: 0;
+    font: 700 1em / 1em Roboto;
+    color: #FFF;
+    transition: all .35s ease;
+}
+.dl-page{
+    background-color: #4384FD;
+    margin: 0 auto;
+    border-radius: 2px;
+    border: 0;
+    color: white;
+    font: 700 1em / 1em Roboto;
+    height: 2.75em;
+    padding: 0 2.75em;
+    
+}
+#installer {
+    background-color: #4384FD;
+}
+#alt-dl:hover {
+    background-color: #f05033;
+}
+
+
+
+
+/* $ANIMATIONS */
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+
+/* $TYPOGRAPHY */
+h1 { font-size: 3em; }
+h2 { font-size: 1.5em; }
+h2 { font-size: 1.125em; }
+
+h1 { font-weight: 900; }
+
+p { font-size: 1em; }
+
+strong { font-weight: 700; }
+
+.light { font-weight: 300; color: #7d8f94;
+}
+
+a { text-decoration: none; color: #4384FD; font-weight: bold; }
+#alt-dl a, #installer a { color: inherit; }
+
+.about-links { list-style: none; padding-left: 0; }
+
+
+
+
+/* TEAM */
+.column {
+    float: left;
+    padding: 0 1em;
+}
+.column-r {
+    float: left;
+}
+
+.column.icon { width: 10%; }
+.column.text { width: 85%; }
+.column-r.half {width: 50%; }
+
+.clearfix:before, .clearfix-r:before,
+.clearfix:after, .clearfix-r:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after, .clearfix-r:after { clear: both; }
+
+.clearfix { *zoom: 1; padding-bottom: 1em; }
+.clearfix-r { *zoom: 1; }
+
+
+
+
+
+/* $MEDIA */
+@media screen and (max-width: 60em){
+    .content, .stock { float: none; width: 100vw; }
+    .content { min-height: auto; /* SHAME HACK */padding-bottom: 10.938em; }
+    .stock { height: 10.938em; }
+    .menu { width: 100vw; }
+    .column-r { float: none; }
+    .column-r.half { width: 100%; }
+}
+
