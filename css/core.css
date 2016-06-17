@@ -42,6 +42,11 @@ img { max-width: 100%; }
     #home h1 { font: 100 3em / 1.75em Roboto; }
     #home p { font: 300 1.874em / 1em Roboto; color: #d5dbe1; }
 
+#notfound { text-align: center; padding-top: 15em; }
+    #notfound h1 { font: 100 3em / 1.15em Roboto; }
+    #notfound p { font: 300 1.874em / 1.5em Roboto; color: #d5dbe1; }
+    #notfound a { text-decoration: none; color: #4384FD; }
+
 #footer h2 { font: 700 1.25em / 1em Roboto; text-transform: uppercase; }
 
 #footer p {
